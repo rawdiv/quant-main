@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for Internship - Quant Network</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .apply-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            background: #000;
+            color: #fff;
+        }
+        .apply-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .apply-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .apply-header h1 {
+            font-size: 2.5rem;
+            color: #C6A962;
+            margin-bottom: 1rem;
+        }
+        .apply-form {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(198, 169, 98, 0.1);
+        }
+        .form-section {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(198, 169, 98, 0.1);
+        }
+        .form-section h2 {
+            color: #C6A962;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #C6A962;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(198, 169, 98, 0.2);
+            border-radius: 5px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .form-group select {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C6A962' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1em;
+        }
+        .checkbox-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+        }
+        .submit-button {
+            background: #C6A962;
+            color: #000;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 2rem;
+        }
+        .submit-button:hover {
+            background: #D4B97A;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            color: #4CAF50;
+            margin-top: 1rem;
+        }
+        .error-message {
+            display: none;
+            text-align: center;
+            color: #f44336;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">QUANT NETWORK</div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="ecosystem.html">Ecosystem</a></li>
+                <li><a href="status.html">Status</a></li>
+                <li><a href="index.html#vision">Vision</a></li>
+                <li><a href="https://qntx.vercel.app/" target="_blank">Token</a></li>
+                <li><a href="index.html#community">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="apply-page">
+        <div class="apply-container">
+            <div class="apply-header">
+                <h1>Apply for Internship</h1>
+                <p>Join our team and help build the future of blockchain technology</p>
+            </div>
+
+            <form id="internshipForm" class="apply-form">
+                <!-- Basic Information -->
+                <div class="form-section">
+                    <h2>🔹 Basic Information</h2>
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn Profile URL (Optional)</label>
+                        <input type="url" id="linkedin" name="linkedin">
+                    </div>
+                    <div class="form-group">
+                        <label for="portfolio">Portfolio/GitHub/Website URL (Optional)</label>
+                        <input type="url" id="portfolio" name="portfolio">
+                    </div>
+                </div>
+
+                <!-- Internship Role -->
+                <div class="form-section">
+                    <h2>🔹 Internship Role</h2>
+                    <div class="form-group">
+                        <label for="position">Which position are you applying for?</label>
+                        <select id="position" name="position" required>
+                            <option value="">Select a position</option>
+                            <option value="frontend">Frontend Developer</option>
+                            <option value="backend">Backend Developer</option>
+                            <option value="blockchain">Blockchain Developer</option>
+                            <option value="uiux">UI/UX Designer</option>
+                            <option value="smartcontract">Smart Contract Developer</option>
+                            <option value="auditor">Smart Contract Auditor</option>
+                            <option value="devops">DevOps Engineer</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">Available Start Date</label>
+                        <input type="date" id="startDate" name="startDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Preferred Internship Duration</label>
+                        <select id="duration" name="duration" required>
+                            <option value="">Select duration</option>
+                            <option value="1">1 month</option>
+                            <option value="2">2 months</option>
+                            <option value="3">3 months</option>
+                            <option value="6">6 months</option>
+                            <option value="flexible">Flexible</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Internship Type</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="fullTime" name="internshipType" value="fullTime">
+                                <label for="fullTime">Full-Time</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="partTime" name="internshipType" value="partTime">
+                                <label for="partTime">Part-Time</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="remote" name="internshipType" value="remote">
+                                <label for="remote">Remote</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="onsite" name="internshipType" value="onsite">
+                                <label for="onsite">Onsite</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="hybrid" name="internshipType" value="hybrid">
+                                <label for="hybrid">Hybrid</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical/Design Skills -->
+                <div class="form-section">
+                    <h2>🔹 Technical/Design Skills</h2>
+                    <div class="form-group">
+                        <label for="skills">List your relevant technical/design skills and tools</label>
+                        <textarea id="skills" name="skills" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Have you worked on any live projects or internships before?</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" id="experienceYes" name="hasExperience" value="yes" required>
+                                <label for="experienceYes">Yes</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" id="experienceNo" name="hasExperience" value="no" required>
+                                <label for="experienceNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="previousProjects">If yes, briefly describe your previous projects or internships</label>
+                        <textarea id="previousProjects" name="previousProjects"></textarea>
+                    </div>
+                </div>
+
+                <!-- Motivation & Fit -->
+                <div class="form-section">
+                    <h2>🔹 Motivation & Fit</h2>
+                    <div class="form-group">
+                        <label for="motivation">Why do you want to join QNTX for this internship?</label>
+                        <textarea id="motivation" name="motivation" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="blockchainInterest">What excites you about Blockchain or Tech Startups?</label>
+                        <textarea id="blockchainInterest" name="blockchainInterest" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="workManagement">How do you manage work and deadlines in a fast-paced team?</label>
+                        <textarea id="workManagement" name="workManagement" required></textarea>
+                    </div>
+                </div>
+
+                <!-- File Uploads -->
+                <div class="form-section">
+                    <h2>🔹 File Uploads</h2>
+                    <div class="form-group">
+                        <label for="resume">Upload your Resume/CV</label>
+                        <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="portfolioFiles">Upload Project Files or Portfolio (Optional)</label>
+                        <input type="file" id="portfolioFiles" name="portfolioFiles" multiple>
+                    </div>
+                </div>
+
+                <!-- Final Details -->
+                <div class="form-section">
+                    <h2>🔹 Final Details</h2>
+                    <div class="form-group">
+                        <label>Are you available for daily meetings or check-ins?</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" id="meetingsYes" name="availableForMeetings" value="yes" required>
+                                <label for="meetingsYes">Yes</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" id="meetingsNo" name="availableForMeetings" value="no" required>
+                                <label for="meetingsNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Do you require a certificate or letter of recommendation?</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="radio" id="certificateYes" name="requiresCertificate" value="yes" required>
+                                <label for="certificateYes">Yes</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="radio" id="certificateNo" name="requiresCertificate" value="no" required>
+                                <label for="certificateNo">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="additionalNotes">Any additional message or notes you'd like to share?</label>
+                        <textarea id="additionalNotes" name="additionalNotes"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button">Submit Application</button>
+                <div class="loading">Submitting your application...</div>
+                <div class="success-message">Your application has been submitted successfully!</div>
+                <div class="error-message">There was an error submitting your application. Please try again.</div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="brand">
+                <h3>QUANT NETWORK</h3>
+            </div>
+            <div class="footer-links">
+                <div class="footer-column">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="ecosystem.html">Ecosystem</a>
+                </div>
+                <div class="footer-column">
+                    <a href="index.html#vision">Vision</a>
+                    <a href="https://qntx.vercel.app/" target="_blank">Token</a>
+                    <a href="#" class="legal-link">Legal Disclaimer</a>
+                </div>
+                <div class="footer-column">
+                    <a href="careers.html">Careers</a>
+                    <a href="hiring.html">We're Hiring</a>
+                    <a href="join.html">Join Our Team</a>
+                </div>
+                <div class="footer-column contact-info">
+                    <a href="mailto:contact@quantnetwork.io">contact@quantnetwork.io</a>
+                    <a href="mailto:support@quantnetwork.io">support@quantnetwork.io</a>
+                    <a href="https://www.quantnetwork.io">www.quantnetwork.io</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Initialize Supabase client
+        const supabaseUrl = 'https://kggdnpubkkidjvnpvcpt.supabase.co'
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtnZ2RucHVia2tpZGp2bnB2Y3B0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU5MTI0MzcsImV4cCI6MjA2MTQ4ODQzN30.9mMrjoPowgrB-ecSg85d55UdYsoACBnCX3MhcXt2A5o'
+        const supabase = supabase.createClient(supabaseUrl, supabaseKey)
+
+        // Constants for validation
+        const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB in bytes
+        const ALLOWED_RESUME_TYPES = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+
+        // Email validation function
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // File validation function
+        function validateFile(file, isResume = false) {
+            if (file.size > MAX_FILE_SIZE) {
+                throw new Error(`File size exceeds 5MB limit: ${file.name}`);
+            }
+
+            if (isResume && !ALLOWED_RESUME_TYPES.includes(file.type)) {
+                throw new Error(`Invalid file type for resume. Please upload PDF, DOC, or DOCX files only: ${file.name}`);
+            }
+
+            return true;
+        }
+
+        // Form submission handler
+        document.getElementById('internshipForm').addEventListener('submit', async (e) => {
+            e.preventDefault()
+            
+            const loading = document.querySelector('.loading')
+            const successMessage = document.querySelector('.success-message')
+            const errorMessage = document.querySelector('.error-message')
+            
+            loading.style.display = 'block'
+            successMessage.style.display = 'none'
+            errorMessage.style.display = 'none'
+
+            try {
+                // Get form data
+                const formData = new FormData(e.target)
+                const data = Object.fromEntries(formData.entries())
+                
+                // Validate email
+                if (!isValidEmail(data.email)) {
+                    throw new Error('Please enter a valid email address');
+                }
+                
+                // Handle file uploads
+                const resumeFile = formData.get('resume')
+                const portfolioFiles = formData.getAll('portfolioFiles')
+                
+                // Validate resume file
+                validateFile(resumeFile, true)
+                
+                // Validate portfolio files
+                for (const file of portfolioFiles) {
+                    validateFile(file)
+                }
+                
+                // Upload resume to Supabase Storage
+                const { data: resumeData, error: resumeError } = await supabase.storage
+                    .from('resumes')
+                    .upload(`${Date.now()}_${resumeFile.name}`, resumeFile)
+                
+                if (resumeError) throw resumeError
+                
+                // Upload portfolio files if any
+                let portfolioUrls = []
+                if (portfolioFiles.length > 0) {
+                    for (const file of portfolioFiles) {
+                        const { data: fileData, error: fileError } = await supabase.storage
+                            .from('portfolio')
+                            .upload(`${Date.now()}_${file.name}`, file)
+                        
+                        if (fileError) throw fileError
+                        portfolioUrls.push(fileData.path)
+                    }
+                }
+                
+                // Prepare data for database
+                const applicationData = {
+                    ...data,
+                    resume_url: resumeData.path,
+                    portfolio_urls: portfolioUrls,
+                    created_at: new Date().toISOString()
+                }
+                
+                // Insert application into database
+                const { data: dbData, error: dbError } = await supabase
+                    .from('internship_applications')
+                    .insert([applicationData])
+                
+                if (dbError) throw dbError
+                
+                // Show success message
+                loading.style.display = 'none'
+                successMessage.style.display = 'block'
+                e.target.reset()
+                
+            } catch (error) {
+                console.error('Error:', error)
+                loading.style.display = 'none'
+                errorMessage.style.display = 'block'
+                errorMessage.textContent = error.message || 'There was an error submitting your application. Please try again.'
+            }
+        })
+
+        // Add real-time validation for email input
+        document.getElementById('email').addEventListener('input', function(e) {
+            const email = e.target.value;
+            const isValid = isValidEmail(email);
+            e.target.setCustomValidity(isValid ? '' : 'Please enter a valid email address');
+        });
+
+        // Add real-time validation for file inputs
+        document.getElementById('resume').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                try {
+                    validateFile(file, true);
+                    e.target.setCustomValidity('');
+                } catch (error) {
+                    e.target.setCustomValidity(error.message);
+                }
+            }
+        });
+
+        document.getElementById('portfolioFiles').addEventListener('change', function(e) {
+            const files = e.target.files;
+            for (const file of files) {
+                try {
+                    validateFile(file);
+                } catch (error) {
+                    e.target.setCustomValidity(error.message);
+                    break;
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
