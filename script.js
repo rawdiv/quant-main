@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Intersection Observer for section animations
-    const sections = document.querySelectorAll('section');
+    const sections = document.querySelectorAll('section:not(.status-section)');
     const observerOptions = {
         threshold: 0.2,
         rootMargin: '0px'
@@ -116,6 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sections.forEach(section => {
         sectionObserver.observe(section);
+    });
+
+    // Make status sections visible by default
+    document.querySelectorAll('.status-section').forEach(section => {
+        section.style.opacity = '1';
+        section.style.transform = 'none';
     });
 
     // Smooth scroll for navigation links
@@ -198,5 +204,5 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Create particles periodically
-    setInterval(createParticle, 300);
+    setInterval(createParticle, 100);
 }); 
